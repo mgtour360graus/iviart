@@ -23,9 +23,9 @@
   var items=list.get('items')||[], bindings={},panoramas={maringa:[],curitiba:[]};
   items.forEach(function(item,index){var media=item.get('media');if(!media)return;var id=media.get('id');if(!/^iviart_/.test(id))return;var match=id.match(/^iviart_(maringa|curitiba)_(node\d+)$/);if(!match)return;bindings[match[1]+'_'+match[2]]=index;panoramas[match[1]].push({id:match[2],title:match[2]==='node2'&&match[1]==='maringa'||match[2]==='node34'&&match[1]==='curitiba'?'Fachada': 'Ambiente '+(panoramas[match[1]].length+1),thumb:media.get('thumbnailUrl')});});
   window.IVIART_PANORAMAS=panoramas;
-  list.set('selectedIndex',-1);
+  list.set('selectedIndex',-1);script.MainViewerPanoramaPlayer.set('panorama',null);
   function navigate(id){var index=bindings[id];if(typeof index!=='number')throw Error('Ambiente não encontrado: '+id);script.setPlayListSelectedIndex(list,index);window.IVIART_CURRENT_SCENE=id;}
-  window.IVIART_ENGINE={navigate:navigate,selectUnit:function(id){list.set('selectedIndex',-1);navigate(id==='curitiba'?'curitiba_node34':'maringa_node2')},getState:function(){var index=list.get('selectedIndex');var item=items[index];return {index:index,id:item&&item.get('media')&&item.get('media').get('id'),bindings:bindings}}};
+  window.IVIART_ENGINE={navigate:navigate,selectUnit:function(id){list.set('selectedIndex',-1);script.MainViewerPanoramaPlayer.set('panorama',null);navigate(id==='curitiba'?'curitiba_node34':'maringa_node2')},getState:function(){var index=list.get('selectedIndex');var item=items[index];return {index:index,id:item&&item.get('media')&&item.get('media').get('id'),bindings:bindings}}};
   await load('mg-tour-skin/app.js');
   window.IVIART_READY=true;
  }
