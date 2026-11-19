@@ -1,0 +1,83 @@
+#: locale=pt
+
+## Media
+
+### Audio
+audiores_F858EF09_F52F_81A2_41DE_5512121BE9BA.url = media/audio_F9FD4681_F52F_80A2_41D6_3559C5977641_pt.mp3
+
+### Audio Subtitles
+
+### Title
+iviart_curitiba_node1.label = Iviart · Curitiba
+iviart_curitiba_node2.label = Iviart · Curitiba
+iviart_curitiba_node32.label = Iviart · Curitiba
+iviart_curitiba_node31.label = Iviart · Curitiba
+iviart_curitiba_node33.label = Iviart · Curitiba
+iviart_curitiba_node29.label = Iviart · Curitiba
+iviart_curitiba_node28.label = Iviart · Curitiba
+iviart_curitiba_node30.label = Iviart · Curitiba
+iviart_curitiba_node26.label = Iviart · Curitiba
+iviart_curitiba_node25.label = Iviart · Curitiba
+iviart_curitiba_node27.label = Iviart · Curitiba
+iviart_curitiba_node23.label = Iviart · Curitiba
+iviart_curitiba_node22.label = Iviart · Curitiba
+iviart_curitiba_node24.label = Iviart · Curitiba
+iviart_curitiba_node20.label = Iviart · Curitiba
+iviart_curitiba_node19.label = Iviart · Curitiba
+iviart_curitiba_node21.label = Iviart · Curitiba
+iviart_curitiba_node17.label = Iviart · Curitiba
+iviart_curitiba_node16.label = Iviart · Curitiba
+iviart_curitiba_node18.label = Iviart · Curitiba
+iviart_curitiba_node14.label = Iviart · Curitiba
+iviart_curitiba_node13.label = Iviart · Curitiba
+iviart_curitiba_node15.label = Iviart · Curitiba
+iviart_curitiba_node11.label = Iviart · Curitiba
+iviart_curitiba_node10.label = Iviart · Curitiba
+iviart_curitiba_node12.label = Iviart · Curitiba
+iviart_curitiba_node8.label = Iviart · Curitiba
+iviart_curitiba_node7.label = Iviart · Curitiba
+iviart_curitiba_node9.label = Iviart · Curitiba
+iviart_curitiba_node5.label = Iviart · Curitiba
+iviart_curitiba_node4.label = Iviart · Curitiba
+iviart_curitiba_node34.label = Iviart · Curitiba
+iviart_curitiba_node6.label = Iviart · Curitiba
+iviart_curitiba_node3.label = Iviart · Curitiba
+iviart_maringa_node32.label = Iviart · Maringá
+iviart_maringa_node29.label = Iviart · Maringá
+iviart_maringa_node31.label = Iviart · Maringá
+iviart_maringa_node30.label = Iviart · Maringá
+iviart_maringa_node26.label = Iviart · Maringá
+iviart_maringa_node28.label = Iviart · Maringá
+iviart_maringa_node27.label = Iviart · Maringá
+iviart_maringa_node23.label = Iviart · Maringá
+iviart_maringa_node25.label = Iviart · Maringá
+iviart_maringa_node24.label = Iviart · Maringá
+iviart_maringa_node20.label = Iviart · Maringá
+iviart_maringa_node22.label = Iviart · Maringá
+iviart_maringa_node21.label = Iviart · Maringá
+iviart_maringa_node17.label = Iviart · Maringá
+iviart_maringa_node19.label = Iviart · Maringá
+iviart_maringa_node18.label = Iviart · Maringá
+iviart_maringa_node14.label = Iviart · Maringá
+iviart_maringa_node16.label = Iviart · Maringá
+iviart_maringa_node15.label = Iviart · Maringá
+iviart_maringa_node11.label = Iviart · Maringá
+iviart_maringa_node13.label = Iviart · Maringá
+iviart_maringa_node12.label = Iviart · Maringá
+iviart_maringa_node8.label = Iviart · Maringá
+iviart_maringa_node10.label = Iviart · Maringá
+iviart_maringa_node9.label = Iviart · Maringá
+iviart_maringa_node5.label = Iviart · Maringá
+iviart_maringa_node7.label = Iviart · Maringá
+iviart_maringa_node6.label = Iviart · Maringá
+iviart_maringa_node2.label = Iviart · Maringá
+iviart_maringa_node3.label = Iviart · Maringá
+iviart_maringa_node4.label = Iviart · Maringá
+
+## Tour
+
+### Description
+tour.description = O Conforto Começa aqui 
+
+### Title
+tour.name = Iviart · Maringá e Curitiba · Comparativo
