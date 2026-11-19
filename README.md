@@ -4,4 +4,4 @@ Maringá e Curitiba. Player 3DVista 2026.1.2, 65 panoramas e 153 setas a 35 FPS.
 
 Publicação: https://mgtour360graus.github.io/iviart/
 
-A exportação nativa inclui a marca 3DVista Academic. Safari e aparelhos físicos iOS/Android pendem de validação. Internet Explorer recebe alternativa com contatos.
+A integração preserva a definição original do player; academicWatermark permanece false, igual à exportação sem skin. Entrada com giro de 180° em 6 s e descida de 6 s nas duas fachadas. Safari e aparelhos físicos iOS/Android pendem de validação. Internet Explorer recebe alternativa com contatos.
