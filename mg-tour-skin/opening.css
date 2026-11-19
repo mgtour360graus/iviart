@@ -3,3 +3,7 @@ html.iviart-opening #viewer,html.iviart-opening #preloadContainer{visibility:hid
 html.iviart-opening.iviart-prompt-ready #viewer{visibility:visible}
 .iviart-audio-mask{position:fixed;inset:0;z-index:0;pointer-events:auto;background:radial-gradient(ellipse at 40% 30%,#fff 0%,#f8f7f4 60%,#efeeea 100%);backdrop-filter:blur(36px);-webkit-backdrop-filter:blur(36px)}
 .iviart-audio-card{border:1px solid rgba(255,255,255,.94);border-radius:18px;box-shadow:0 16px 55px rgba(63,49,43,.12);overflow:hidden!important;background:rgba(255,255,255,.83)}
+
+#iviart-opening-shield{position:fixed;inset:0;z-index:2147483646;pointer-events:none;background:radial-gradient(ellipse at 40% 30%,#fff 0%,#f8f7f4 60%,#efeeea 100%);opacity:1;transition:opacity 160ms ease-out}
+#iviart-opening-shield.is-ready{opacity:0}
+@media(prefers-reduced-motion:reduce){#iviart-opening-shield{transition:none}}
