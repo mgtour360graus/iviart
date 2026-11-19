@@ -13,3 +13,5 @@ Abertura revisada: máscara branca leitosa mantém apenas a pergunta nativa de �
 Correção de cache: devicesUrl carrega script_general.js com versão explícita. A definição nativa permanece idêntica à exportação; o carregador recebe somente a versão do arquivo.
 
 Transição da abertura: a cobertura branca independente permanece após Sim/Não até o layout, imagens e fontes estarem prontos e dois quadros de composição terem passado. Testes de ambas as escolhas: 241 quadros por teste, sem intervalo desprotegido.
+
+Revisão a partir da gravação do usuário: a animação nativa de áudio ainda podia expor o panorama antes da skin. As camadas nativas de fundo agora ficam ocultas até selecionar uma unidade; a pergunta de áudio permanece funcional. Conferência visual por sequências de77 quadros (Não) e81 quadros (Sim).

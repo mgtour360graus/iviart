@@ -17,6 +17,13 @@
  }
  window.IVIART_OPENING_COMPLETE=finish;
  function visibleInPlayer(e){for(var n=e;n&&n.id!=='viewer';n=n.parentElement){if(n.style.display==='none'||n.style.visibility==='hidden'||n.style.opacity==='0')return false}return true}
+ function isolateAudio(audioLayer){
+  for(var branch=audioLayer;branch&&branch.parentElement;branch=branch.parentElement){
+   var parent=branch.parentElement;
+   Array.from(parent.children).forEach(function(sibling){if(sibling!==branch)sibling.classList.add('iviart-native-background')});
+   if(parent.id==='viewer')break;
+  }
+ }
  function inspect(){
   if(finished)return;if(window.IVIART_READY){finish();return}
   var label=Array.from(document.querySelectorAll('#viewer span')).find(function(e){return /^Ativar\s+áudio\?$/.test((e.textContent||'').trim())&&e.getBoundingClientRect().width>0&&visibleInPlayer(e)});
@@ -27,7 +34,7 @@
   if(!card||card===document.body)return;
   if(!card.dataset.iviartChoiceBound){
    card.dataset.iviartChoiceBound='true';
-   for(var layer=card.parentElement;layer&&layer.id!=='viewer';layer=layer.parentElement){var bounds=layer.getBoundingClientRect();if(layer.id&&bounds.width>=innerWidth*.9&&bounds.height>=innerHeight*.9){observer.observe(layer,{attributes:true,attributeFilter:['style']});break}}
+   for(var layer=card.parentElement;layer&&layer.id!=='viewer';layer=layer.parentElement){var bounds=layer.getBoundingClientRect();if(layer.id&&bounds.width>=innerWidth*.9&&bounds.height>=innerHeight*.9){isolateAudio(layer);observer.observe(layer,{attributes:true,attributeFilter:['style']});break}}
    var controls=Array.from(card.querySelectorAll('*')).filter(function(e){return e.children.length===0&&/^(SIM|NÃO)$/.test((e.textContent||'').trim())}).map(function(e){return e.closest('[id]')||e.parentElement});
    var choose=function(event){if(event.type==='keydown'&&event.key!=='Enter'&&event.key!==' ')return;if(controls.some(function(control){return control.contains(event.target)}))cover()};
    ['pointerdown','mousedown','touchstart','click','keydown'].forEach(function(type){card.addEventListener(type,choose,{capture:true,passive:true})});

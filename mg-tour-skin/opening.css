@@ -7,3 +7,7 @@ html.iviart-opening.iviart-prompt-ready #viewer{visibility:visible}
 #iviart-opening-shield{position:fixed;inset:0;z-index:2147483646;pointer-events:none;background:radial-gradient(ellipse at 40% 30%,#fff 0%,#f8f7f4 60%,#efeeea 100%);opacity:1;transition:opacity 160ms ease-out}
 #iviart-opening-shield.is-ready{opacity:0}
 @media(prefers-reduced-motion:reduce){#iviart-opening-shield{transition:none}}
+
+/* The native scene cannot appear before a unit has been selected. */
+body:not(.immersive) #viewer .iviart-native-background{opacity:0!important;visibility:hidden!important}
+body:not(.immersive) #viewer .iviart-native-background *{visibility:hidden!important}
