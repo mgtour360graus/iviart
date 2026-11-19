@@ -17,3 +17,5 @@ Transição da abertura: a cobertura branca independente permanece após Sim/Nã
 Revisão a partir da gravação do usuário: a animação nativa de áudio ainda podia expor o panorama antes da skin. As camadas nativas de fundo agora ficam ocultas até selecionar uma unidade; a pergunta de áudio permanece funcional. Conferência visual por sequências de77 quadros (Não) e81 quadros (Sim).
 
 Abertura personalizada conforme referência do usuário: cartão vertical branco com arte em vinho/preto, monograma e marca originais IVIART, instrução e escolhas nativas Sim/Não. No celular, apresentação compacta com cartões quadrados empilhados (Maringá acima, Curitiba abaixo), ambas as opções e rodapé na mesma tela, sem rolagem no tamanho conferido.
+
+Controles revisados: orientação inicial some após5segundos; áudio indica a ação disponível e acompanha o mute nativo. VR usa toggleVR do player e aparece no mobile; fullscreen fica no desktop. Abertura desktop ocupa a tela inteira; versão mobile preservada. Teste físico com óculos VR pendente. Nova exportação para desativar o duplo clique será fornecida pelo usuário.

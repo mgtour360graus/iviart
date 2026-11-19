@@ -25,14 +25,14 @@
   }
  }
  function welcomeSize(){
-  var landscape=innerHeight<500&&innerWidth>innerHeight;
+  var desktop=innerWidth>=1000&&innerHeight>=500;var landscape=!desktop&&innerHeight<500&&innerWidth>innerHeight;
   var width=landscape?Math.min(620,innerWidth-28):Math.min(340,innerWidth-32,(innerHeight-32)*230/474);
   var height=landscape?Math.min(350,innerHeight-24):width*474/230;
   root.classList.toggle('iviart-opening-landscape',landscape);
   root.style.setProperty('--iviart-welcome-width',width+'px');root.style.setProperty('--iviart-welcome-height',height+'px');
   root.style.setProperty('--iviart-audio-left',(innerWidth/2+(landscape?width*.23:0))+'px');
-  root.style.setProperty('--iviart-audio-top',(innerHeight/2+height*.19)+'px');
-  root.style.setProperty('--iviart-audio-scale',Math.min(1,width*(landscape?.46:.76)/320));
+  root.style.setProperty('--iviart-audio-top',(innerHeight/2+(desktop?130:height*.19))+'px');
+  root.style.setProperty('--iviart-audio-scale',(desktop?.9:Math.min(1,width*(landscape?.46:.76)/320)));
  }
  welcomeSize();window.addEventListener('resize',welcomeSize);
  function inspect(){

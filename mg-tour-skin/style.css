@@ -152,3 +152,16 @@ html,body{height:100%!important;height:100dvh!important}#viewer{height:100%!impo
  body:not(.immersive) #iviart-skin .facade-caption{bottom:14px}
 }
 @media(max-width:700px) and (max-height:600px){body:not(.immersive) #iviart-skin .facade-card{width:min(calc(100vw - 24px),calc((100dvh - 192px)/2));height:min(calc(100vw - 24px),calc((100dvh - 192px)/2));}body:not(.immersive) #iviart-skin .facade-caption{bottom:10px;gap:5px}}
+
+#iviart-skin .unit-status[hidden]{display:none!important}
+@media(max-width:700px),(hover:none) and (pointer:coarse){body.immersive #iviart-skin #fullscreen{display:none!important}}
+
+.tour-action{display:none;position:fixed;z-index:15;width:48px;height:48px;align-items:center;justify-content:center;border:1px solid #e6dfd6;border-radius:10px;background:#f8f6f0ee;color:var(--wine);box-shadow:0 4px 15px #25100c0a;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+body.immersive #iviart-skin .tour-action{display:flex;pointer-events:auto}
+#vr-toggle{top:30px;right:86px}#audio-toggle{right:24px;top:calc(50% - 92px)}
+.tour-action svg{width:23px;height:23px}
+body.iviart-vr-active #iviart-skin{visibility:hidden!important}
+@media(max-width:700px),(hover:none) and (pointer:coarse){#vr-toggle{top:calc(14px + env(safe-area-inset-top));right:14px;width:48px;height:48px}#audio-toggle{top:auto;right:14px;bottom:calc(89px + env(safe-area-inset-bottom));width:50px;height:50px}}
+
+body.immersive #iviart-skin #vr-toggle{display:none}
+@media(max-width:700px),(max-width:1000px) and (pointer:coarse){body.immersive #iviart-skin #vr-toggle{display:flex}}

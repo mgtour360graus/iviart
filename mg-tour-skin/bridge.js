@@ -15,7 +15,7 @@
  }
  async function mount(){
   if(document.getElementById('iviart-skin'))return;
-  var response=await fetch('mg-tour-skin/markup.html?v=13');if(!response.ok)throw Error('Layout indisponível');
+  var response=await fetch('mg-tour-skin/markup.html?v=17');if(!response.ok)throw Error('Layout indisponível');
   var host=document.createElement('div');host.id='iviart-skin';host.innerHTML=await response.text();document.body.appendChild(host);
   await load('mg-tour-skin/config.js');
   var script=window.IVIART_NATIVE, list=script.mainPlayList;setupEntrance(script);
@@ -25,8 +25,8 @@
   window.IVIART_PANORAMAS=panoramas;
   list.set('selectedIndex',-1);script.MainViewerPanoramaPlayer.set('panorama',null);
   function navigate(id){var index=bindings[id];if(typeof index!=='number')throw Error('Ambiente não encontrado: '+id);script.setPlayListSelectedIndex(list,index);window.IVIART_CURRENT_SCENE=id;}
-  window.IVIART_ENGINE={navigate:navigate,selectUnit:function(id){list.set('selectedIndex',-1);script.MainViewerPanoramaPlayer.set('panorama',null);navigate(id==='curitiba'?'curitiba_node34':'maringa_node2')},getState:function(){var index=list.get('selectedIndex');var item=items[index];return {index:index,id:item&&item.get('media')&&item.get('media').get('id'),bindings:bindings}}};
-  await load('mg-tour-skin/app.js');
+  window.IVIART_ENGINE={navigate:navigate,selectUnit:function(id){list.set('selectedIndex',-1);script.MainViewerPanoramaPlayer.set('panorama',null);navigate(id==='curitiba'?'curitiba_node34':'maringa_node2')},getMuted:function(){return !!script.get('mute')},toggleAudio:function(){var muted=!script.get('mute');script.set('mute',muted);if(!muted)Object.values(window.currentGlobalAudios||{}).forEach(function(entry){var audio=entry.audio;if(audio&&audio.get('state')!=='playing')audio.play()});return muted},onAudioChange:function(callback){script.bind('mute_changed',function(){callback(!!script.get('mute'))},script)},isVRAvailable:function(){return !!script.get('vrAvailable')||!!script.get('vrControllerAvailable')},toggleVR:function(){try{script.toggleVR()}catch(error){script.disableVR();throw error}},onVRChange:function(callback){script.MainViewer.bind('viewMode_changed',function(){callback(script.MainViewer.get('viewMode'))},script.MainViewer)},getVRMode:function(){return script.MainViewer.get('viewMode')},getState:function(){var index=list.get('selectedIndex');var item=items[index];return {index:index,id:item&&item.get('media')&&item.get('media').get('id'),bindings:bindings}}};
+  await load('mg-tour-skin/app.js?v=17');
   window.IVIART_READY=true;if(window.IVIART_OPENING_COMPLETE)window.IVIART_OPENING_COMPLETE();
  }
  var rootDetected=0;var tries=0,timer=setInterval(function(){if(!window.IVIART_NATIVE&&window.tour&&tour._isInitialized&&tour._getRootPlayer)window.IVIART_NATIVE=tour._getRootPlayer();if(window.IVIART_NATIVE&&!rootDetected)rootDetected=Date.now();if(window.IVIART_NATIVE&&Date.now()-rootDetected>600&&document.readyState!=='loading'&&!/Ativar\s+áudio\?/.test(document.body.innerText)){clearInterval(timer);mount().catch(function(e){console.error('IVIART integração:',e);window.IVIART_ERROR=e.message;})}else if(++tries>240&&!window.IVIART_NATIVE){clearInterval(timer);console.error('IVIART: player não inicializou')}},250);
