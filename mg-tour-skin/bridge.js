@@ -6,6 +6,7 @@
   ['iviart_maringa_node2_camera','iviart_curitiba_node34_camera'].forEach(function(id){
    var camera=script[id],pos=camera.get('initialPosition'),yaw=pos.get('yaw')||0;
    camera.set('initialSequence',null);camera.set('automaticRotationSpeed',0);
+   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){camera.set('displayOriginPosition',instance('RotationalCameraDisplayPosition',{pitch:pos.get('pitch')||0,yaw:yaw,hfov:pos.get('hfov')||120,stereographicFactor:0}));camera.set('displayMovements',[]);return;}
    camera.set('displayOriginPosition',instance('RotationalCameraDisplayPosition',{pitch:-90,yaw:yaw-180,hfov:165,stereographicFactor:1}));
    camera.set('displayMovements',[
     instance('TargetRotationalCameraDisplayMovement',{duration:6000,targetPitch:-90,targetYaw:yaw,targetHfov:165,targetStereographicFactor:1}),
