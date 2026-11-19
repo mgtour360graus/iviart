@@ -1,21 +1,13 @@
 # IVIART — Tour Virtual 360°
 
-Maringá e Curitiba. Player 3DVista 2026.1.2, 65 panoramas e 153 setas a 35 FPS. Layout exclusivo IVIART com escolha de unidade, ambientes e contatos. Efeito mundinho nas duas fachadas.
-
 Publicação: https://mgtour360graus.github.io/iviart/
 
-A integração preserva a definição original do player; academicWatermark permanece false, igual à exportação sem skin. Entrada com giro de 180° em 6 s e descida de 6 s nas duas fachadas. Safari e aparelhos físicos iOS/Android pendem de validação. Internet Explorer recebe alternativa com contatos.
+Tour de Maringá e Curitiba exportado pelo 3DVista2026.1.2, com65 panoramas e153 setas. A definição nativa é preservada integralmente; a skin é montada por cima do player após a escolha inicial de áudio.
 
-Nova exportação nativa feita em 19/11/2026 a partir do projeto aberto e salvo pelo usuário. Skin reaplicada preservando script_general.js integralmente; 15.210 tiles conferidos, sem arquivos ausentes. Entrada das fachadas: giro de 180° em 6 s seguido de descida de 6 s.
+A nova exportação de19/11/2026 tem MainViewer.doubleClickAction=none. O carregador usa uma versão derivada do conteúdo de script_general.js para evitar reutilizar navegação antiga em cache.
 
-Abertura revisada: máscara branca leitosa mantém apenas a pergunta nativa de áudio e os botões Sim/Não; após a escolha, revela a apresentação IVIART. A definição do player e a licença permanecem intactas.
+Abertura ampla com curvas em tela inteira no computador e cartão vertical no celular. A seleção mobile mantém os cartões quadrados empilhados: Maringá acima e Curitiba abaixo. Nas duas fachadas há giro de180° em6segundos seguido de descida de6segundos.
 
-Correção de cache: devicesUrl carrega script_general.js com versão explícita. A definição nativa permanece idêntica à exportação; o carregador recebe somente a versão do arquivo.
+O aviso inicial da unidade desaparece após5segundos. O áudio acompanha o mute nativo: Ativar áudio quando desligado e Silenciar áudio quando ligado. VR é oferecido no mobile e usa toggleVR do3DVista; o botão de tela cheia é mantido no desktop.
 
-Transição da abertura: a cobertura branca independente permanece após Sim/Não até o layout, imagens e fontes estarem prontos e dois quadros de composição terem passado. Testes de ambas as escolhas: 241 quadros por teste, sem intervalo desprotegido.
-
-Revisão a partir da gravação do usuário: a animação nativa de áudio ainda podia expor o panorama antes da skin. As camadas nativas de fundo agora ficam ocultas até selecionar uma unidade; a pergunta de áudio permanece funcional. Conferência visual por sequências de77 quadros (Não) e81 quadros (Sim).
-
-Abertura personalizada conforme referência do usuário: cartão vertical branco com arte em vinho/preto, monograma e marca originais IVIART, instrução e escolhas nativas Sim/Não. No celular, apresentação compacta com cartões quadrados empilhados (Maringá acima, Curitiba abaixo), ambas as opções e rodapé na mesma tela, sem rolagem no tamanho conferido.
-
-Controles revisados: orientação inicial some após5segundos; áudio indica a ação disponível e acompanha o mute nativo. VR usa toggleVR do player e aparece no mobile; fullscreen fica no desktop. Abertura desktop ocupa a tela inteira; versão mobile preservada. Teste físico com óculos VR pendente. Nova exportação para desativar o duplo clique será fornecida pelo usuário.
+Verificações: definição nativa idêntica à exportação,15.210 tiles presentes, duplo clique desativado e layout preservado na prévia. AcademicWatermark permanece false, como na origem. Testes físicos com óculos VR e aparelhos iOS/Android não foram realizados. A prévia interna pode bloquear a API de tela cheia; o botão mostra uma orientação quando isso ocorre.
