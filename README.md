@@ -15,3 +15,5 @@ Correção de cache: devicesUrl carrega script_general.js com versão explícita
 Transição da abertura: a cobertura branca independente permanece após Sim/Não até o layout, imagens e fontes estarem prontos e dois quadros de composição terem passado. Testes de ambas as escolhas: 241 quadros por teste, sem intervalo desprotegido.
 
 Revisão a partir da gravação do usuário: a animação nativa de áudio ainda podia expor o panorama antes da skin. As camadas nativas de fundo agora ficam ocultas até selecionar uma unidade; a pergunta de áudio permanece funcional. Conferência visual por sequências de77 quadros (Não) e81 quadros (Sim).
+
+Abertura personalizada conforme referência do usuário: cartão vertical branco com arte em vinho/preto, monograma e marca originais IVIART, instrução e escolhas nativas Sim/Não. No celular, apresentação compacta com cartões quadrados empilhados (Maringá acima, Curitiba abaixo), ambas as opções e rodapé na mesma tela, sem rolagem no tamanho conferido.

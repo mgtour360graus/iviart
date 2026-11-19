@@ -24,13 +24,24 @@
    if(parent.id==='viewer')break;
   }
  }
+ function welcomeSize(){
+  var landscape=innerHeight<500&&innerWidth>innerHeight;
+  var width=landscape?Math.min(620,innerWidth-28):Math.min(340,innerWidth-32,(innerHeight-32)*230/474);
+  var height=landscape?Math.min(350,innerHeight-24):width*474/230;
+  root.classList.toggle('iviart-opening-landscape',landscape);
+  root.style.setProperty('--iviart-welcome-width',width+'px');root.style.setProperty('--iviart-welcome-height',height+'px');
+  root.style.setProperty('--iviart-audio-left',(innerWidth/2+(landscape?width*.23:0))+'px');
+  root.style.setProperty('--iviart-audio-top',(innerHeight/2+height*.19)+'px');
+  root.style.setProperty('--iviart-audio-scale',Math.min(1,width*(landscape?.46:.76)/320));
+ }
+ welcomeSize();window.addEventListener('resize',welcomeSize);
  function inspect(){
   if(finished)return;if(window.IVIART_READY){finish();return}
   var label=Array.from(document.querySelectorAll('#viewer span')).find(function(e){return /^Ativar\s+áudio\?$/.test((e.textContent||'').trim())&&e.getBoundingClientRect().width>0&&visibleInPlayer(e)});
   if(!label){if(promptSeen)cover();root.classList.remove('iviart-prompt-ready');return}
   promptSeen=true;
   var card=label;
-  while(card&&card!==document.body){var text=(card.textContent||'').replace(/\s/g,'');var rect=card.getBoundingClientRect();if(text==='Ativaráudio?SIMNÃO'&&rect.width>=200&&rect.width<=600&&rect.height>=100&&rect.height<=320)break;card=card.parentElement}
+  while(card&&card!==document.body){var text=(card.textContent||'').replace(/\s/g,'');var rect=card.getBoundingClientRect();if(card.id&&text==='Ativaráudio?SIMNÃO'&&rect.width>=200&&rect.width<=600&&rect.height>=100&&rect.height<=320)break;card=card.parentElement}
   if(!card||card===document.body)return;
   if(!card.dataset.iviartChoiceBound){
    card.dataset.iviartChoiceBound='true';
@@ -39,7 +50,7 @@
    var choose=function(event){if(event.type==='keydown'&&event.key!=='Enter'&&event.key!==' ')return;if(controls.some(function(control){return control.contains(event.target)}))cover()};
    ['pointerdown','mousedown','touchstart','click','keydown'].forEach(function(type){card.addEventListener(type,choose,{capture:true,passive:true})});
   }
-  if(!card.parentElement.querySelector('.iviart-audio-mask')){var mask=document.createElement('div');mask.className='iviart-audio-mask';mask.setAttribute('aria-hidden','true');card.parentElement.insertBefore(mask,card);card.classList.add('iviart-audio-card')}
+  if(!card.parentElement.querySelector('.iviart-audio-mask')){var mask=document.createElement('div');mask.className='iviart-audio-mask';mask.setAttribute('aria-hidden','true');mask.innerHTML='<div class="iviart-welcome-card"><div class="iviart-welcome-brand"><span class="iviart-welcome-emblem"><img src="mg-tour-skin/assets/favicon.png" alt=""></span><img class="iviart-welcome-wordmark" src="mg-tour-skin/assets/logo.png" alt=""></div><p>Inicie o tour clicando<br>com ou sem o áudio</p></div>';card.parentElement.insertBefore(mask,card);card.classList.add('iviart-audio-card')}
   root.classList.add('iviart-prompt-ready');
  }
  var observer=new MutationObserver(inspect);observer.observe(root,{childList:true,subtree:true});var timer=setInterval(inspect,100);

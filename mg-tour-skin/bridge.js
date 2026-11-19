@@ -15,7 +15,7 @@
  }
  async function mount(){
   if(document.getElementById('iviart-skin'))return;
-  var response=await fetch('mg-tour-skin/markup.html');if(!response.ok)throw Error('Layout indisponível');
+  var response=await fetch('mg-tour-skin/markup.html?v=13');if(!response.ok)throw Error('Layout indisponível');
   var host=document.createElement('div');host.id='iviart-skin';host.innerHTML=await response.text();document.body.appendChild(host);
   await load('mg-tour-skin/config.js');
   var script=window.IVIART_NATIVE, list=script.mainPlayList;setupEntrance(script);
