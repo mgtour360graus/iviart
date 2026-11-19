@@ -80,4 +80,4 @@ iviart_maringa_node4.label = Iviart · Maringá
 tour.description = O Conforto Começa aqui 
 
 ### Title
-tour.name = Iviart · Maringá e Curitiba · Comparativo
+tour.name = IVIART | Tour Virtual 360° — Maringá e Curitiba
